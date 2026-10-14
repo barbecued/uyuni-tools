@@ -34,7 +34,7 @@ func newCmd(globalFlags *types.GlobalFlags, run utils.CommandFunc[addCAFlags]) *
 
 	ssl.AddSSLGenerationFlags(cmd)
 	ssl.AddSSLCARootFlags(cmd)
-	cmd.Flags().String("ssl-password", "", L("Password for the CA key to generate"))
+	cmd.Flags().String("ssl-password", "", L("Password to encrypt the generated CA key (Remember this password):"))
 	_ = utils.AddFlagToHelpGroupID(cmd, "ssl-password", ssl.GeneratedFlagsGroup)
 	return cmd
 }
